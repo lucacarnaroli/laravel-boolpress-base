@@ -13,7 +13,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-      
+       $blogs = Blog::all();
+    //    nella view ci va nome della cartella (blog) .index(pagina stampa), compatc(vi va la var)
+       return view('blog.index',compact('blogs')); 
     }
 
     /**
@@ -23,7 +25,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**
@@ -34,7 +36,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +47,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        //singolo articolo
     }
 
     /**

@@ -17,7 +17,7 @@ class BlogsTableSeeder extends Seeder
         for ($i=0; $i < 10 ; $i++) { 
             $newBlog = New Blog;
             $newBlog->title = $faker->jobTitle();
-            $newBlog->subtitle = $faker->catchPhrase();
+            $newBlog->subtitles = $faker->catchPhrase();
             $newBlog->article = $faker->realText($maxNbChars = 200, $indexSize = 2);
             $newBlog->save();
         }
