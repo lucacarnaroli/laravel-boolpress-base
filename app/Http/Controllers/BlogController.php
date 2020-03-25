@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use Illuminate\Mail\Message;
+use PhpParser\Node\Expr\New_;
+
 class BlogController extends Controller
 {
     /**
@@ -36,8 +39,22 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        
-    }
+        $data = $request->all();
+        $request->validate([
+            'title'=>'required|string|max:255',
+            'subtitles' => 'required|string|max:255',
+            'article' => 'required|string|max:255',
+        ]);
+        $newBlog = new Blog;
+        $newBlog->fill($data);
+        $saved = $newBlog->save();
+        if ($saved == true) {
+            $blog = Blog::orderBy('id','desc')->first();
+            return view('blog.show',compact('blog'));
+        } else {
+            dd('error');
+        }
+    }   
 
     /**
      * Display the specified resource.
@@ -45,9 +62,12 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Blog $blog)
     {
-        //singolo articolo
+        if(empty($blog)){
+            abort('404');
+        }
+        return view('blog.show',compact('blogs'));
     }
 
     /**
