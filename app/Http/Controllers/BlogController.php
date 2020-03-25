@@ -43,7 +43,7 @@ class BlogController extends Controller
         $request->validate([
             'title'=>'required|string|max:255',
             'subtitles' => 'required|string|max:255',
-            'article' => 'required|string|max:255',
+            'article' => 'required|string',
         ]);
         $newBlog = new Blog;
         $newBlog->fill($data);
@@ -67,7 +67,7 @@ class BlogController extends Controller
         if(empty($blog)){
             abort('404');
         }
-        return view('blog.show',compact('blogs'));
+        return view('blog.show',compact('blog'));
     }
 
     /**
@@ -81,7 +81,7 @@ class BlogController extends Controller
         if (empty($blog)) {
             abort('404');
         }
-        return view('blog.edit',compact('blogs'));
+        return view('blog.edit',compact('blog'));
     }
 
     /**
@@ -105,8 +105,14 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Blog $blog)
     {
-        //
+        $id = $blog->id;
+        $blog->delete();
+        $data = [
+            'id' => $id,
+            'blogs' => Blog::all(),
+        ];
+        return view('blog.index',$data);
     }
 }

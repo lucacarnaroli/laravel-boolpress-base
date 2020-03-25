@@ -1,2 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: salmon;
+}
+.box-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    .post {
+        margin: 10px;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+}
+
+.box-form {
+    width: 800px;
+    margin: auto;
+    .textarea{
+        width: 100%;
+    }
+}
