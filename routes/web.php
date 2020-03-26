@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('blogs', 'BlogController');
+Route::resource('photos', 'PhotoController');
+Route::resource('users', 'UserController');
