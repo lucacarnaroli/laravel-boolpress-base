@@ -9,7 +9,7 @@
                     <h2 class="card-title">Titolo: {{$blog->title}}</h2>
                     <h4 class="card-text">Sottotitoli: {{$blog->subtitles}}</h4>
                     <p class="card-text">Articolo: {{$blog->article}}</p>
-                    <a href="#" class="btn btn-primary">Modifica</a>
+                    <a href="#" class="btn btn-info">Modifica</a>
                     <form action="{{route('blogs.destroy', $blog->id)}}" method="POST">
                         @csrf
                         @method("DELETE")

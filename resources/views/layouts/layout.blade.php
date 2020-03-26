@@ -8,7 +8,7 @@
 </head>
 <body>
     @include('partials.header')
-    
+
     @yield('header')
 
     @yield('main')

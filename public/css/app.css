@@ -10902,7 +10902,6 @@ body {
 
 .box-post .post {
   margin: 10px;
-  max-height: 500px;
   overflow-y: scroll;
 }
 
@@ -10913,5 +10912,9 @@ body {
 
 .box-form .textarea {
   width: 100%;
+}
+
+.new-post {
+  margin: 30px;
 }
 
