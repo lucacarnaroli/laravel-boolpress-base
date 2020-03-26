@@ -10,6 +10,7 @@
     <div class="box-photo">
         @foreach ($photos as $photo)
             <div class="box-card">
+                <h1>Title: {{$photo->user->name}}</h1>
                 <img src="{{$photo->img}}" alt="">
                 <h2>Nome: {{$photo->name}}</h2>
                 <h3>Id: {{$photo->user_id}}</h3>
