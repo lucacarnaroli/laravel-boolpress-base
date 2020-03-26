@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    @dd($photos);
+    <div class="box-photo">
+        @foreach ($photos as $photo)
+            <div class="box-card">
+                <img src="{{$photo->img}}" alt="">
+                <h2>Nome: {{$photo->name}}</h2>
+                <h3>Id: {{$photo->user_id}}</h3>
+            </div>
+        @endforeach
+    </div>
 </body>
 </html>
