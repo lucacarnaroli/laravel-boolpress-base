@@ -10906,6 +10906,10 @@ body {
   overflow-y: scroll;
 }
 
+.color-white {
+  color: white;
+}
+
 .box-form {
   width: 800px;
   margin: auto;

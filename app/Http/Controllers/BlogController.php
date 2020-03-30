@@ -81,7 +81,7 @@ class BlogController extends Controller
         if (empty($blog)) {
             abort('404');
         }
-        return view('blog.edit',compact('blog'));
+        return view('blog.create',compact('blog'));
     }
 
     /**

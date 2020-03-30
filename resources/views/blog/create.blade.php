@@ -18,11 +18,11 @@
 <div class="box-form">
     <form action="{{route('blogs.store')}}" method="post">
         @csrf
-            @if (!empty($blogs))
-                @method('PATCH')
-            @else
+            {{-- @if (!empty($blogs)) --}}
+                {{-- @method('PATCH') --}}
+            {{-- @else --}}
                 @method('POST')
-            @endif
+            {{-- @endif --}}
         <div class="form-group">
             <label for="exampleInputEmail1">Inserisci il titolo</label>
             <input type="text" class="form-control" name="title" id="{{(!empty($blogs)) ? $blogs->title : ''}}" aria-describedby="emailHelp" placeholder="Title">
